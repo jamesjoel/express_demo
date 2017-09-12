@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title><%= title %></title>
+     <link rel='stylesheet' href='/stylesheets/style.css' />
+     <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <link rel='stylesheet' href='/stylesheets/font-awesome.css' />
+    <script type="text/javascript" src='/javascripts/jquery-3.2.1.min.js'></script>
+    <script type="text/javascript" src='/javascripts/bootstrap.js'></script>
+    <script type="text/javascript" src='/javascripts/angular.min.js'></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script> -->
+    <script type="text/javascript" src='/javascripts/app.js'></script>
+    
+  </head>
+  <body ng-controller="myCtrl">
+    <div class="navbar-wrapper">
+        <div class="container-fluid">
+            <nav class="navbar navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">TSS-NodeJS</a>
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li <% if(title=='Home Page'){%>  class='active' <%} %>><a href="/">Home</a></li>
+                            <li <% if(title=='About Page'){%>  class='active' <%} %>><a href="/about">About</a></li>
+                            <li ><a href="/">Contact</a></li>
+                            <li ><a href="/">FAQ</a></li>
+                           
+                        </ul>
+                        <ul class="nav navbar-nav pull-right">
+                            <li ><a href="/login">Login</a></li>
+                            <li ><a href="/signup">Signup</a></li>
+                           
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div id="wrapper" style="margin-top: 57px;">
+        <div class="container" style="background-color: #FFF; min-height: 600px; height: auto;">
+            <%- include(pagename) %>                
+        </div>
+    </div>
+  </body>
+</html>
